@@ -1,11 +1,11 @@
 name: Thnayan
 on: [push, pull_request]
-jobs: 
+jobs:
   build:
     name: Python Setup
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
         with:
           python-version: "3.9"
           cache: "pip"
@@ -18,8 +18,3 @@ jobs:
       uses: isort --check-only .
     - name: Lint with flake8
       uses: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-
-
-
-
-
